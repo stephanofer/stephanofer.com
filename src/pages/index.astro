@@ -1,8 +1,14 @@
 ---
-import { Welcome } from 'astro:components';
-import Layout from '../layouts/Layout.astro';
+import SectionContainer from '@/components/SectionContainer.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/Hero.astro';
 ---
 
-<Layout>
-	<Welcome title="Welcome to Astro" />
-</Layout>
+<BaseLayout>
+	<SectionContainer id="inicio">
+		<Hero/>
+	</SectionContainer>
+</BaseLayout>
+
+<style>
+</style>
