@@ -1,12 +1,12 @@
 ---
 import SocialPill from "./SocialPill.astro";
-import { Icon } from 'astro-icon/components'
+import { Icon } from "astro-icon/components";
 
 const data = {
   position: "Desarrollador Full Stack",
   name: "Stephano Fernandez 👋🏻",
   description:
-    "1 año de experiencia en la creación de soluciones para empresas, abarcando el ciclo completo de desarrollo desde la conceptualización hasta la implementación exitosa en producción. Me destaco por mi capacidad para traducir requisitos de negocio en soluciones técnicas. Puedo adaptarme rápidamente a nuevos desafíos y entregar consistentemente soluciones que superan las expectativas del cliente.",
+    "",
 };
 ---
 
@@ -16,52 +16,52 @@ const data = {
     <h1>{data.position}</h1>
     <h2>{data.name}</h2>
     <p>
-      {data.description}
+      <strong>+1 año</strong> de experiencia en la creación de soluciones para empresas, abarcando el ciclo completo de desarrollo desde la conceptualización hasta la <strong>implementación exitosa en producción </strong>. Me destaco por mi capacidad para traducir requisitos de negocio en soluciones técnicas.<strong> Puedo adaptarme rápidamente a nuevos desafíos</strong> y entregar consistentemente soluciones que superan las expectativas del cliente.
     </p>
-  </div>
 
-  <div class="container-social">
-    <div class="image">
-      <img src="/me-profile.png" alt="Stephano Fernandez Foto"></img>
-    </div>
-    <!-- <div class="container-item contact">
-      <h3>Contacto</h3>
+    <div class="container-item contact">
       <div class="icons">
         <div>
           <SocialPill>
             <span class="sr-only">LinkedIn</span>
             <Icon name="linkedin" size="20" />
           </SocialPill>
-  
+
           <SocialPill>
             <span class="sr-only">Github</span>
             <Icon name="github" size="20" />
           </SocialPill>
-  
+
           <SocialPill>
             <span class="sr-only">Instagram</span>
-            <Icon name="instagram" size="20"/>
+            <Icon name="instagram" size="20" />
           </SocialPill>
         </div>
 
         <div>
           <SocialPill>
             <span class="sr-only">Telefono</span>
-            <Icon name="phone" size="20"/> 
+            <Icon name="phone" size="20" />
             <span>+51 981 314 610</span>
           </SocialPill>
           <SocialPill>
             <span class="sr-only">Correo</span>
-            <Icon name="email" size="20"/>
+            <Icon name="email" size="20" />
             <span>contacto@stephanofer.com</span>
           </SocialPill>
         </div>
       </div>
-      <button>
-        <Icon name="download" size="20"/>
-        Descargar CV
-      </button>
-    </div> -->
+    </div>
+  </div>
+
+  <div class="container-social">
+    <div class="image">
+      <img src="/me-profile.png" alt="Stephano Fernandez Foto" />
+    </div>
+    <button>
+      <Icon name="download" size="20" />
+      Descargar CV
+    </button>
   </div>
 </div>
 
@@ -108,6 +108,7 @@ const data = {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* justify-content: center; */
     width: 100%;
     gap: 2rem;
 
@@ -122,81 +123,82 @@ const data = {
   }
 
   h1 {
-    font-size: var(--fs-xxl);
+    font-size: var(--fs-lg);
     font-weight: 700;
+    @media (width > 640px) {
+      font-size: var(--fs-xxl);
+    }
   }
 
   h2 {
-    font-size: var(--fs-xl);
+    font-size: var(--fs-lg);
     font-weight: 400;
 
     margin-top: 0.5rem;
 
-
+    @media (width > 640px) {
+      font-size: var(--fs-xl);
+    }
   }
 
   p {
-    font-size: var(--fs-md);
+    font-size: var(--fs-base);
     margin-top: 1rem;
     text-wrap-style: pretty;
-    /* letter-spacing: 0.05rem; */
     line-height: 1.5rem;
-    color: var(--foreground)
-  }
+    color: var(--foreground);
 
-
-
-  .container-social{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .container-item{
-    /* --size: 350px; */
-    /* background-color: rgb(32, 41, 56); */
-
-
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
-    
-    /* width: var(--size); */
-    /* height: 200px; */
-    /* height: var(--size); */
-    /* border: 1px solid red; */
-    border-radius: 0.7rem;
-    border: 2px solid rgb(32, 41, 56);;
-    
-    & h3{
-      margin-bottom: 1rem;
+    @media (width > 640px) {
+      font-size: var(--fs-md);
     }
+  }
+
+  .container-social {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container-item {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    border-radius: 0.7rem;
   }
 
   .icons {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-bottom: 1rem;
-    
+
     & > div:nth-child(1) {
       display: flex;
       flex-direction: row;
+      align-items: center;
+      justify-content: center;
       gap: 0.7rem;
+
+      @media (width > 640px) {
+      justify-content: start;
     }
-    
+    }
+
     & > div:nth-child(2) {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       gap: 0.5rem;
+
+      @media (width > 640px) {
+      flex-direction: row;
+    }
     }
   }
 
-  span{
-    font-size: var(--fs-sm );
+  span {
+    font-size: var(--fs-sm);
     text-wrap: nowrap;
   }
 
-  button{
+  button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,6 +208,7 @@ const data = {
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
     border-radius: 0.3rem;
+    margin-top: 1rem;
 
     background-color: rgb(32 73 30 / 0.5);
     color: var(--pastel-green-200);
@@ -213,14 +216,19 @@ const data = {
     &:hover {
       background-color: rgb(32 73 30 / 0.7);
     }
-
   }
 
-  img{
-    --size: 300px;
+  img {
+    --size: 350px;
 
     width: var(--size);
     height: var(--size);
+
+    object-fit: cover;
   }
 
+  strong{
+    color: var(--resalt);
+    font-weight: 600;
+  }
 </style>
