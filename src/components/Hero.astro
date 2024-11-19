@@ -5,8 +5,13 @@ import { Icon } from "astro-icon/components";
 const data = {
   position: "Desarrollador Full Stack",
   name: "Stephano Fernandez 👋🏻",
-  description:
-    "",
+  social: {
+    linkedin: "https://www.linkedin.com/in/stephanofer/",
+    github: "https://github.com/stephanofer",
+    instagram: "https://www.instagram.com/stephanofer/",
+    phone: "tel:+51981314610",
+    mail: "mailto:contacto@stephanofer.com"
+  }
 };
 ---
 
@@ -22,29 +27,29 @@ const data = {
     <div class="container-item contact">
       <div class="icons">
         <div>
-          <SocialPill>
+          <SocialPill href={data.social.linkedin}>
             <span class="sr-only">LinkedIn</span>
             <Icon name="linkedin" size="20" />
           </SocialPill>
 
-          <SocialPill>
+          <SocialPill href={data.social.github}>
             <span class="sr-only">Github</span>
             <Icon name="github" size="20" />
           </SocialPill>
 
-          <SocialPill>
+          <SocialPill href={data.social.instagram}>
             <span class="sr-only">Instagram</span>
             <Icon name="instagram" size="20" />
           </SocialPill>
         </div>
 
         <div>
-          <SocialPill>
+          <SocialPill href={data.social.phone}>
             <span class="sr-only">Telefono</span>
             <Icon name="phone" size="20" />
             <span>+51 981 314 610</span>
           </SocialPill>
-          <SocialPill>
+          <SocialPill href={data.social.mail}>
             <span class="sr-only">Correo</span>
             <Icon name="email" size="20" />
             <span>contacto@stephanofer.com</span>
@@ -58,10 +63,10 @@ const data = {
     <div class="image">
       <img src="/me-profile.png" alt="Stephano Fernandez Foto" />
     </div>
-    <button>
+    <a class="download" href="/resume.pdf" target = '_blank' role = "link">
       <Icon name="download" size="20" />
       Descargar CV
-    </button>
+    </a>
   </div>
 </div>
 
@@ -71,7 +76,6 @@ const data = {
     display: inline-flex;
     align-items: center;
     justify-self: center;
-    /* max-width: 12rem; */
     gap: 0.3rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -108,7 +112,6 @@ const data = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     width: 100%;
     gap: 2rem;
 
@@ -198,13 +201,12 @@ const data = {
     text-wrap: nowrap;
   }
 
-  button {
+  .download {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     font-size: var(--fs-sm);
-    /* font-weight: 600; */
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
     border-radius: 0.3rem;

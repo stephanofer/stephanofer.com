@@ -1,12 +1,16 @@
 ---
-// const {}
+import type { HTMLAttributes } from "astro/types";
+
+export interface Props extends HTMLAttributes<'a'>{}
+
+const { target = '_blank', rel = 'noopener noreferrer',role = "link", ...props } = Astro.props;
 ---
 
 <a
-  {...Astro.props}
-  target="_blank"
-  rel="noopener noreferrer"
-  role="link"
+  {...props}
+  target={target}
+  rel={rel}
+  role={role}
   class="social-pill"
 >
   <slot />
