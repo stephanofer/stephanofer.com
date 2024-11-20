@@ -1,7 +1,7 @@
 ---
 import MainHead from "@/components/MainHead.astro";
 import "@fontsource-variable/onest";
-import { ClientRouter } from "astro:transitions";
+// import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title?: string;
@@ -14,7 +14,7 @@ const { title, description } = Astro.props;
 <html lang="es">
   <head>
     <MainHead title={title} description={description} />
-    <ClientRouter />
+    <!-- <ClientRouter /> -->
   </head>
   <body class="content-grid" >
     <slot />
