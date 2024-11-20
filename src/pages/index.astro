@@ -2,11 +2,16 @@
 import SectionContainer from '@/components/SectionContainer.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
+import Featured from '@/components/Featured.astro';
 ---
 
 <BaseLayout>
 	<SectionContainer id="inicio">
 		<Hero/>
+	</SectionContainer>
+	<SectionContainer id="proyectos">
+		<!-- <Hero/> -->
+		<Featured/>
 	</SectionContainer>
 </BaseLayout>
 

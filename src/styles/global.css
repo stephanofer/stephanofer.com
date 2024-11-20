@@ -38,10 +38,11 @@ html {
 }
 
 body {
-  min-height: 100vh;
   background-color: var(--background);
   overscroll-behavior: none;
+  min-height: 100vh;
   margin-top: 5rem;
+
 }
 
 h1,
