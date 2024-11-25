@@ -1,19 +1,17 @@
 ---
-import SectionContainer from '@/components/SectionContainer.astro';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import Hero from '@/components/Hero.astro';
-import Featured from '@/components/Featured.astro';
+import SectionContainer from "@/components/SectionContainer.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Hero from "@/components/Hero.astro";
+import Featured from "@/components/Featured.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
 <BaseLayout>
-	<SectionContainer id="inicio">
-		<Hero/>
-	</SectionContainer>
-	<SectionContainer id="proyectos">
-		<!-- <Hero/> -->
-		<Featured/>
-	</SectionContainer>
+  <SectionContainer id="inicio">
+    <Hero />
+  </SectionContainer>
+  <SectionContainer id="proyectos">
+    <Featured />
+  </SectionContainer>
+  <Footer />
 </BaseLayout>
-
-<style>
-</style>

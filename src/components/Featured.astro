@@ -9,27 +9,78 @@ import { Icon } from "astro-icon/components";
 
 <ul class="container">
   <li class="container-li">
+    <div class="project-image">
+      <img src="/asd.png" alt="asd" />
+    </div>
     <div class="project-content">
-      <div>
-        <p class="project-featured">Proyecto Desarrolado</p>
-        <h3 class="project-title">Punto de venta Personalizado</h3>
-        <div class="project-description">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dolorum doloribus recus!</p>
-        </div>
-        <ul class="project-tech-list">
-          <li>VsCode</li>
-          <li>React</li>
-          <li>Nestjs</li>
-          <li>Postgresql</li>
-        </ul>
-        <div class="project-links">
-          <Icon name="github" size="20" />
-          <Icon name="external-link" size="20" />
-        </div>
+      <p class="project-featured">Proyecto Desarrolado</p>
+      <h3 class="project-title">Punto de venta Personalizado</h3>
+      <div class="project-description">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dolorum
+          doloribus recus!
+        </p>
+      </div>
+      <ul class="project-tech-list">
+        <li>VsCode</li>
+        <li>React</li>
+        <li>Nestjs</li>
+        <li>Postgresql</li>
+      </ul>
+      <div class="project-links">
+        <a href=""><Icon name="github" size="24" /></a>
+        <a href=""><Icon name="external-link" size="24" /></a>
       </div>
     </div>
+  </li>
+  <li class="container-li">
     <div class="project-image">
-      <img src="/asd.png" alt="asd">
+      <img src="/asd.png" alt="asd" />
+    </div>
+    <div class="project-content">
+      <p class="project-featured">Proyecto Desarrolado</p>
+      <h3 class="project-title">Punto de venta Personalizado</h3>
+      <div class="project-description">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dolorum
+          doloribus recus!
+        </p>
+      </div>
+      <ul class="project-tech-list">
+        <li>VsCode</li>
+        <li>React</li>
+        <li>Nestjs</li>
+        <li>Postgresql</li>
+      </ul>
+      <div class="project-links">
+        <a href=""><Icon name="github" size="24" /></a>
+        <a href=""><Icon name="external-link" size="24" /></a>
+      </div>
+    </div>
+  </li>
+  <li class="container-li">
+    <div class="project-image">
+      <img src="/asd.png" alt="asd" />
+    </div>
+    <div class="project-content">
+      <p class="project-featured">Proyecto Desarrolado</p>
+      <h3 class="project-title">Punto de venta Personalizado</h3>
+      <div class="project-description">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dolorum
+          doloribus recus!
+        </p>
+      </div>
+      <ul class="project-tech-list">
+        <li>VsCode</li>
+        <li>React</li>
+        <li>Nestjs</li>
+        <li>Postgresql</li>
+      </ul>
+      <div class="project-links">
+        <a href=""><Icon name="github" size="24" /></a>
+        <a href=""><Icon name="external-link" size="24" /></a>
+      </div>
     </div>
   </li>
 </ul>
@@ -38,40 +89,62 @@ import { Icon } from "astro-icon/components";
   .title {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
   }
 
   .container {
-    margin-left: 12rem;
-    margin-right: 12rem;
+    /* margin-left: 5rem; */
+    /* margin-right: 5rem; */
+    display: flex;
+    flex-direction: column;
   }
 
   .container-li {
     position: relative;
-    display: grid;
-    grid-gap: 10px;
-
-    grid-template-columns: repeat(12, 1fr);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-  }
+    justify-content: space-between;
+    gap: 2rem;
 
-  .project-content {
-    grid-column: 7 / -1;
-    text-align: right;
+    &:not(:last-of-type) {
+      margin-bottom: 5rem;
+      /* @media (max-width: 768px) {
+      margin-bottom: 70px;
+    }
 
-    /* @media (max-width: 1080px) {
-      grid-column: 5 / -1;
+    @media (max-width: 480px) {
+      margin-bottom: 30px;
     } */
+    }
+
+    @media (width > 640px) {
+      flex-direction: row;
+    }
+  }
+  .project-content {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
   }
 
-  .project-featured{
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+  .project-featured {
+    margin-bottom: 0.5rem;
+    font-size: var(--fs-base);
+    color: var(--pastel-green-200);
   }
 
-  h3{
-    margin-bottom: 5rem;
+  .project-title {
+    margin-bottom: 1.5rem;
     font-size: var(--fs-md);
+  }
+
+  .project-description {
+    padding: 2rem;
+    border-radius: 0.3rem;
+    background-color: rgb(31, 41, 55);
+    font-size: var(--fs-base);
+    margin-bottom: 1.5rem;
   }
 
   .project-tech-list {
@@ -79,55 +152,37 @@ import { Icon } from "astro-icon/components";
     flex-direction: row;
     justify-content: flex-end;
     flex-wrap: wrap;
-    position: relative;
     z-index: 2;
-    margin: 25px 0 10px;
-    padding: 0;
-    list-style: none;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 
-    &>li {
-      margin: 0 20px 5px 0;
-      color: var(--light-slate);
-      font-family: var(--font-mono);
-      font-size: var(--fz-xs);
+    & > li {
+      font-size: var(--fs-base);
       white-space: nowrap;
+      color: var(--foreground);
     }
   }
 
   .project-links {
+    display: flex;
     justify-content: flex-end;
+    gap: 1rem;
   }
 
   .project-image {
-    grid-column: 1 / 3;
-    position: absolute;
-    /* display: flex; */
-
-
-    /* @media (max-width: 768px) {
-      grid-column: 1 / -1;
-    } */
+    display: flex;
   }
 
-  .project-description {
-    position: relative;
-    z-index: 2;
-    padding: 25px;
-    border-radius: 0.3rem;
-    background-color: red; /*rgb(32 73 30 / 0.5)*/
-    color: var(--light-slate);
-    font-size: var(--fz-lg);
+  img {
+    border: 2px solid rgb(31, 41, 55);
+    border-radius: 1rem;
+    width: 700px;
+    object-fit: cover;
+    transition: transform 200ms;
 
-
-    strong {
-      color: var(--white);
-      font-weight: normal;
+    &:hover {
+      transform: scale(1.01);
+      cursor: pointer;
     }
-  }
-
-  img{
-    /* height: 300px; */
-    width: 500px;
-    /* margin-left: 11rem; */
   }
 </style>
